@@ -1,0 +1,45 @@
+================================================================================
+PANDUAN FLASHING PHISON PS3111 (APACER AS340 / SATAFIRM S11) DI WINDOWS
+================================================================================
+
+Folder ini berisi semua paket firmware dan tool untuk flashing di Windows.
+
+LOKASI FILE:
+1. fw_patched_120G.exe
+   -> Flasher firmware SBFM61.3 yang SUDAH DIPATCH:
+      - Otomatis EraseAll (skip bad block > 162).
+      - Menyesuaikan kapasitas ke 120GB agar tidak melebihi jatah spare block NAND.
+
+2. SBFM61.3_11032021.BIN
+   -> File RAW firmware resmi Phison yang cocok dengan chip:
+      Toshiba 64L BiCS3 TLC 16k (TH58TFT1V23BA8H, 4CE).
+
+3. MPTool_PS3111Mod/
+   -> Tool Mass Production Phison PS3111 (versi v7.0 & v6.0) jika ingin kustomisasi
+      kapasitas, serial number, atau parameter secara manual.
+
+4. s11-flasher_builder/
+   -> Tool pembuat flasher portable dari vlo (Ochkin Vadim).
+
+--------------------------------------------------------------------------------
+CARA FLASHING DI WINDOWS:
+--------------------------------------------------------------------------------
+
+METODE A: PAKAI FLASHER PRAKTIS (fw_patched_120G.exe) -> DIREKOMENDASIKAN
+1. Sambungkan SSD ke PC / Laptop Windows (via SATA port langsung atau USB adapter).
+2. Jika SSD masih belum kedeteksi (hanya lampu kedip/stuck), pasang jumper ROM mode
+   selama 2-3 detik saat colok power, lalu lepas jumpernya (SSD akan kedeteksi
+   sebagai "SATAFIRM S11" atau "PS3111").
+3. Klik kanan pada "fw_patched_120G.exe", pilih "Run as administrator".
+4. Pilih drive SSD Phison yang terdeteksi di daftar perangkat.
+5. Klik tombol "Upgrade" / "Start".
+6. Tunggu proses: EraseAllBlock -> PreFormat -> ISP Normal Code -> Berhasil.
+7. Cabut dan colok ulang kabel SSD / restart PC.
+8. Buka "Disk Management" di Windows, inisialisasi GPT/MBR, lalu format partisi 120GB!
+
+METODE B: PAKAI MP TOOL (Jika Metode A mentok)
+1. Buka folder "MPTool_PS3111Mod".
+2. Jalankan "MP-v7.0(新-功能多-只可用外置温度传感器).exe" (Run as administrator).
+3. Klik tombol "Auto Detect" untuk mendeteksi NAND Toshiba BiCS3.
+4. Klik "Start" untuk menjalankan format pabrik (Mass Production).
+================================================================================

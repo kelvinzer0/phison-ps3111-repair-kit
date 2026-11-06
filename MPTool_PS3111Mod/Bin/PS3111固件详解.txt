@@ -1,0 +1,105 @@
+M (SBFM) = 普通固件
+Z (SBFZ) = OCZ（饥饿鲨 已经无了）
+A (SBFA) = TOSHIBA（东芝）
+K (SBFK) = KINGSTON（金士顿）
+S (SBFS) = SEAGATE (MAXTOR)（希捷和迈拓）
+R (SBFR) = TRANSCEND（创见）
+G (SBFG) = INITIO（initio 就是6081那个，马甲那个）
+SG (SBSG) = self-test (RDT固件)
+
+版本信息：
+
+0x.x – mlc/tsb15（东芝15nm）
+1x.x – tlc/tsb15（东芝15nm）
+2x.x – mlc/micron3d (32L)
+5x.x – tlc/hynix (16nm)
+6x.x – tlc/tsb3d （东芝3D TLC，BICS 2 3 4都支持，可能19年的61.3开始支持BICS4）
+7x.x – tlc/micron3d (B0KB)
+8x.x – mlc/tsb15 (ufs – w/spi rom v.SBRM06.0)
+9x.x – mlc/tsb15
+Ax.x – tlc/intel3d (L06B->B0KB)
+Bx.x – tlc/micron3dv2 (64L – B16A/B17A)
+BA.x – tlc/micron3dv2 (64L – B17A)
+BB.x – tlc/micron3dv2 (64L – B16A),全盘模拟SLC
+Kx.x – qlc/intel3dv2 (64L – N18A)
+KA.x – qlc/micron3dv2 (64L – N18A)
+Ex.x – tlc/hynix3d (72L)
+Fx.x – mlc/samsung (14nm ufs?)
+Gx.x – ?
+Jx.x – tlc/micron3dv3 (96L – B27A)
+
+金士顿那也一样
+STKS1xxx – tlc/tsb3d (bics3 – 64L,可能也支持bics2/bics4)
+STKSCxxx – tlc/tsb3d (bics3 – 64L, bics4 – 96L)
+STKSDxxx – tlc/micron3dv2 (64L – B16A), cache like BB.x
+STKSExxx – ? (some imft?)
+STKSFxxx – tlc/hynix3d (72L)
+
+OCZ \ TOSHIBA:
+10.x – tlc/tsb15 (tl100) – 标准类似于 1x.x
+12.x – tlc/bics3 (tr200) – 标准类似于 6x.x
+13.x – tlc/bics3 (tr200) – 标准类似于 6x.x
+15.x – tlc/bics4 (tr200)
+17.x – ? (tr200)
+
+SEAGATE \ MAXTOR:
+1010/1011? – bics3/256g
+C010/C011? – bics4/512g
+D010 – n18a??
+E010
+F011 – hyv4(3d-72L)/256g
+
+Kingston CP33238B = Phison PS3111-S11
+
+
+下面是部分固件的说明
+
+OCZ TL100 | 版本10.3 2016年12月28日
+重要：此固件更新旨在解决严重的错误和/或提高SSD的可靠性和性能。强烈建议您更新驱动器。
+改进：对
+代码进行了改进，以提高写入性能。
+已知问题：
+-与MacBook Pro的已知的兼容性问题®的NVidia ®基于芯片组：MCP79，MCP89K。
+-与主板的NVidia已知的兼容性问题®的Nforce ® 9个台式机芯片组。
+
+OCZ TL100 | 版本10.6 2018年12月21日
+重要说明：此固件更新旨在解决非关键错误和/或提高SSD的性能。强烈建议您更新SSD。
+改进：
+–修复了SMART报告的错误
+已知问题
+– MacBookPro®基于NVIDIA®的芯片组MCP79，MCP89K的
+已知兼容性问题– NVIDIAnForce® -9系列台式机芯片组的主板的已知兼容性问题
+
+OCZ TR200 | 版本12.6（
+12.2、12.4、12.5 –> 12.6）2018年12月21日重要提示：对于具有v12.2，v12.4和v12.5的TR200，此固件更新旨在解决非关键的错误和/或提高其性能。您的SSD。强烈建议您更新SSD。
+
+改进：
+–修正了SMART报告的错误
+已知问题：
+– MacBookPro®基于NVIDIA®的芯片组MCP79，MCP89K的
+已知兼容性问题– NVIDIAnForce® -9系列台式机芯片组的主板的已知兼容性问题
+
+OCZ TR200 | 版本13.3（13.1 –> 13.3）2018年12月21日
+重要说明：对于具有v13.1的TR200，此固件更新旨在解决非关键错误和/或提高SSD的性能。强烈建议您更新SSD。
+改进：
+–修正了SMART报告的错误
+已知问题：
+– MacBookPro®基于NVIDIA®的芯片组MCP79，MCP89K的
+已知兼容性问题– NVIDIAnForce® -9系列台式机芯片组的主板的已知兼容性问题
+
+金士顿A400 | SBFK71F1（7-10-2019）
+此固件提供以下功能：
+–固定的角壳导致某些驱动器无响应
+
+金士顿A400 | SBFKB1C3（12-19-2018）
+此固件提供以下内容：-
+改进的响应能力和系统稳定性
+-修复了在使用过程中磁盘活动可能激增的极端情况
+
+金士顿A400 | SBFKB1H5（01-16-2020）
+此固件提供以下功能：–
+改进的系统响应能力–
+解决了与HP笔记本驱动器自检有关的特殊情况–
+改进了与Windows 7和Windows 10的旧模式安装相关的兼容性–
+改进了缓存行为–
+解决了错误的SMART温度显示

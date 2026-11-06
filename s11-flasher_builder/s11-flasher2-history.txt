@@ -1,0 +1,31 @@
+0.0	- initial
+0.2	- add intel/micron flash support (fw 2x.x,7x.x,8x.x,Ax.x,Bx.x)
+0.3	- change default model name from "Smartbuy SSD 120GB" to "SATA SSD"
+	- update readme for model name change
+	- add s11-flasher-techinfo.txt with extra information
+0.4	- some changes in firmware version description
+0.41	- added s11-flasher-howto.txt
+0.42	- some readme changes
+	- experimental version patched for detect inic6081 in protect mode
+0.43	- working version for inic6081 in protect mode - 0mi/s11-flasher-micron-initio.cmd
+0.431	- update s11-flasher-howto.txt
+0.432	- fix links in s11-flasher-readme.txt
+0.44	- include eraseall patcher
+0.45	- change default erase all 0x11->9
+	- some s11-flasher-techinfo.txt update
+0.46	- .cmd check firmware size and output error message for 1544704 Bytes size firmwares
+0.461	- .cmd fixed to check presence of the fw.bin
+
+----------------------------------------------------------------------
+
+2.0	- new flasher with support for "locked" firmware
+	- .cmd support firmware with 1479168 and 1544704 bytes size
+2.01	- update s11-flasher2-techinfo.txt
+2.10	- add phison_fw_convert.exe and update .cmd for support 1547776 Bytes size firmware from seagate
+	- update s11-flasher2-techinfo.txt for pslc mode and slc cache size settings
+2.11	- update s11-flasher2-readme.txt - descript firmware from seagate
+2.12	- some readme and other decription changes
+2.13	- add illustrated guides for modifying the firmware flasher
+2.14	- some readme and other decription changes
+2.15	- some readme and other decription changes
+	- add s11-flasher2-micron-new.cmd for new micron flash

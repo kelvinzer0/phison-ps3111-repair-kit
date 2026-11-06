@@ -1,0 +1,30 @@
+краткая инструкция по прошивке дисков на Phison S11.
+подробности в readme.
+
+1. скачать файлы с прошивками: http://www.usbdev.ru/?wpfb_dl=6583 и распаковать их в один каталог с содержимым этого архива
+2. распаковать этот архив в некоторый каталог
+3. если исходная прошивка неизвестна - запустить http://vlo.name:3000/tmph/phison_flash_id.rar, посмотреть на примененный флеш, и используя таблицу соответствия в s11-flasher2-readme.txt выяснить нужную версию.
+4. переименовать нужную прошивку в fw.bin и поместить ее в этот же каталог (если размер прошивки отличен от 1479168, 1544704 или 1547776 байт см. readme)
+5. запустить s11-flasher-toshiba.cmd, s11-flasher-micron.cmd или s11-flasher-micron-new.cmd в зависимости от версии прошивки. от обычного пользователя, не надо от админа.
+6. fw.exe готов к применению. запускать под виндой с ahci режимом sata контроллера и желательно драйверами от ms/intel. в ide режиме врядли. никаких usb!
+
+примечания:
+- если диск не определяется, то для запуска в rom mode необходимо замкнуть перемычку перед подачей питания на диск, после включения (до начала процедуры прошивки) ее необходимо убрать.
+- для дисков с intel/micron 32L tlc (B0KB) флешем необходимо указывать обьем (см. s11-flasher2-techinfo.txt)
+- для дисков с большим количеством заводских дефектов тоже может потребоваться указать обьем (60-120-240.. GB), потому что на умолчательный обьем в 64-128-256.. GB может не хватить исправного флеша.
+----------------------------------------------------------------------
+
+brief manual to install firmware for drives on Phison S11.
+details in the readme.
+
+1. download firmware files: http://www.usbdev.ru/?wpfb_dl=6583 and unpack them into one directory with the contents of this archive
+2. unpack this archive into some directory
+3. if the original firmware is unknown - run http://vlo.name:3000/tmph/phison_flash_id.rar, look at the applied flash, and using the match table in s11-flasher2-readme.txt find out the right version.
+4. rename the desired firmware to fw.bin and put it in the same directory (if the firmware size is different from 1479168 or 1544704 or 1547776 bytes see readme)
+5. run S11-flasher-toshiba.cmd or s11-flasher-micron.cmd depending on firmware version. don't use "run as admin"!
+6. fw.exe is ready to use. run under Windows with ahci mode sata controller and preferably drivers from ms / intel. in ide mode hardly. no usb!
+
+notes:
+- if the disk is not detected, then to run in rom mode, you must close the jumper before supplying power to the disk, after switching on (before the firmware procedure), it must be removed.
+- for disks with an intel/micron 32L tlc (B0KB) flash, specify the lba size (see s11-flasher2-techinfo.txt)
+- for disks with a large number of factory defects, you may also need to specify lba size (60-120-240.. GB), because for default lba size in 64-128-256.. GB may not be enough for a good flash blocks.
